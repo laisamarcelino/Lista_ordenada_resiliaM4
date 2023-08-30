@@ -1,17 +1,14 @@
-import express from "express"
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import _ from "lodash"
-
-const app = express()
-const port = process.env.PORT || 3000
+import chalk from "chalk"
 
 /**
- * Trata erro de requisicao
+ * Verifica se a palavra digitada é válida, isto é, se não possui numeros ou caracteres especiais
  */
-app.listen(port, ()=>{
-    console.log("servidor rodando\n")
-})
+function verificaCaracter(palavra){
+    return /^[a-zA-Z\s]+$/.test(palavra)
+}
 
 /**
  * Cria uma instancia da interface readline usando o metodo createInterface
@@ -33,7 +30,9 @@ const entradaUsuario = readline.createInterface({
 const lista = []
 let lista_ordenada = []
 
+console.log("Bem vindo(a) ao ordenador de palavras! Digite uma palavra por linha ou digite SAIR para finalizar: ")
 entradaUsuario.on("line", (input)=>{
+    
     if (input === "SAIR" || input === "sair"){
         entradaUsuario.close()
         lista_ordenada = _.sortBy(lista)
@@ -42,8 +41,12 @@ entradaUsuario.on("line", (input)=>{
             console.log((i+1) + '°: ' + lista_ordenada[i])
         }
     }
-    else {
+    else if (verificaCaracter(input)){
+        console.log("Digite outra palavra (ou digite SAIR para finalizar): ")
         lista.push(input)
+    }
+    else {
+        console.log(chalk.red("Não é uma palavra válida! Digite outra (ou digite SAIR para finalizar): "))
     }
 })
 
