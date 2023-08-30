@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "lista_ordenada_resiliam4",
   "version": "1.0.0",
   "description": "Projeto individual do Módulo 4 -> Criação de uma ferramenta de ordenação de palavras em ordem alfabética",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/laisamarcelino/Lista_ordenada_resiliaM4#readme",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2",
+    "readline": "^1.3.0"
   }
 }
