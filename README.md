@@ -24,6 +24,7 @@ Como executar o projeto:
 * Passo 1: No terminal do seu computador faça o clone deste repositório utilizando o comando -> git clone https://github.com/laisamarcelino/Lista_ordenada_resiliaM4.git
 
 * Passo 2: No terminal do Visual Studio Code (ou IDE similar) inicialize o Node.js e complete as informações solicitadas -> npm init
+-> Documentação: https://docs.npmjs.com/cli/v9/commands/npm-init
 
 * Passo 3: Abra o terminal dentro da pasta Lista_ordenada_resiliaM4 e execute o programa utilizando o comando -> node index.js
 
