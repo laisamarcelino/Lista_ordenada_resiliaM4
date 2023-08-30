@@ -1,7 +1,7 @@
 import express from "express"
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-import lodash from "lodash"
+import _ from "lodash"
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000
 /**
  * Trata erro de requisicao
  */
-// app.listen(port, ()=>{
-//     console.log("servidor rodando")
-// })
+app.listen(port, ()=>{
+    console.log("servidor rodando\n")
+})
 
 /**
  * Cria uma instancia da interface readline usando o metodo createInterface
@@ -31,15 +31,21 @@ const entradaUsuario = readline.createInterface({
  */
 
 const lista = []
+let lista_ordenada = []
 
 entradaUsuario.on("line", (input)=>{
     if (input === "SAIR" || input === "sair"){
         entradaUsuario.close()
-        console.log(_.sortBy(lista))
+        lista_ordenada = _.sortBy(lista)
+        console.log('Itens ordenados: ')
+        for (let i=0; i <= (lista.length - 1); i++){
+            console.log((i+1) + '°: ' + lista_ordenada[i])
+        }
     }
     else {
         lista.push(input)
     }
 })
+
 
 
