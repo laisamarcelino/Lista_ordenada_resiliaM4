@@ -5,7 +5,8 @@
   "description": "Projeto individual do Módulo 4 -> Criação de uma ferramenta de ordenação de palavras em ordem alfabética",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
