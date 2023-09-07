@@ -22,17 +22,25 @@ Projeto individual do Módulo 4 -> Criação de uma ferramenta de ordenação de
 ### Como executar o projeto:
 
 * Passo 1: No terminal do seu computador faça o clone deste repositório utilizando o comando  
-```git clone https://github.com/laisamarcelino/Lista_ordenada_resiliaM4.git```
+```
+git clone https://github.com/laisamarcelino/Lista_ordenada_resiliaM4.git
+```
 
 * Passo 2: No terminal do Visual Studio Code (ou IDE similar) entre no diretório do projeto 
-```cd Lista_ordenada_resiliaM4``` 
+```
+cd Lista_ordenada_resiliaM4
+``` 
 
 * Passo 3: No terminal do Visual Studio Code (ou IDE similar) inicialize o Node.js utilizando o comando a seguir para que a pasta node-modules seja baixada
-``` npm i ``` 
+``` 
+npm i 
+``` 
 -> Documentação: [Node](https://docs.npmjs.com/cli/v9/commands/npm-init)
 
 * Passo 4: Execute o programa utilizando o comando 
-```node src/controllers/InsercaoPalavras.js```
+```
+node src/controllers/InsercaoPalavras.js
+```
 
 * Passo 5: Digite uma palavra por linha pressionando a tecla ENTER ou utilize a palavra SAIR para encerrar o programa.
 
