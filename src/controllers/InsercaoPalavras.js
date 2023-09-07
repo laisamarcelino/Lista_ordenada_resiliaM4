@@ -2,13 +2,10 @@ import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import _ from "lodash"
 import chalk from "chalk"
+import VerificaCaracter from './ValidacaoController.js';
+import ListaModel from '../models/ListaModel.js';
+import OrdenaLista from './OrdenaLista.js';
 
-/**
- * Verifica se a palavra digitada é válida, isto é, se não possui numeros ou caracteres especiais
- */
-function verificaCaracter(palavra){
-    return /^[a-zA-Z\s]+$/.test(palavra)
-}
 
 /**
  * Cria uma instancia da interface readline usando o metodo createInterface
@@ -27,23 +24,23 @@ const entradaUsuario = readline.createInterface({
  * Configuracao do evento line - emitido quando o usuario pressiona enter
  */
 
-const lista = []
-let lista_ordenada = []
-
 console.log("Bem vindo(a) ao ordenador de palavras! Digite uma palavra por linha ou digite SAIR para finalizar: ")
+
+const ListaModelada = new ListaModel
+
 entradaUsuario.on("line", (input)=>{
     
     if (input === "SAIR" || input === "sair"){
         entradaUsuario.close()
-        lista_ordenada = _.sortBy(lista)
+
+        ListaModelada.lista_ordenada = _.sortBy(ListaModelada.lista)
+
         console.log('Itens ordenados: ')
-        for (let i=0; i <= (lista.length - 1); i++){
-            console.log((i+1) + '°: ' + lista_ordenada[i])
-        }
+        OrdenaLista.Ordenacao(ListaModelada.lista, ListaModelada.lista_ordenada)
     }
-    else if (verificaCaracter(input)){
+    else if (VerificaCaracter.ValidaPalavra(input)){
         console.log("Digite outra palavra (ou digite SAIR para finalizar): ")
-        lista.push(input)
+        ListaModelada.lista.push(input)
     }
     else {
         console.log(chalk.red("Não é uma palavra válida! Digite outra (ou digite SAIR para finalizar): "))
