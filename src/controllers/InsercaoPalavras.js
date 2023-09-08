@@ -1,4 +1,4 @@
-import * as readline from 'node:readline/promises';
+import readline from 'readline';
 import { stdin as input, stdout as output } from 'node:process';
 import _ from "lodash"
 import chalk from "chalk"
