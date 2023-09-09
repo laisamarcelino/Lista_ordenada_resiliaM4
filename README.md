@@ -21,6 +21,16 @@ Projeto individual do Módulo 4 -> Criação de uma ferramenta de ordenação de
 
 ### Como executar o projeto:
 
+Para executar o projeto você precisa ter o Node.JS instalado, caso não tenha acesse o [link](https://nodejs.org/en/download) e faça o download do Node de acordo com seu sistema operacional.
+
+Caso você já possua o Node instalado, faça a atualização dele utilizando o comando
+```
+npm install -g npm
+```
+
+
+### Como executar o projeto:
+
 * Passo 1: No terminal do seu computador faça o clone deste repositório utilizando o comando  
 ```
 git clone https://github.com/laisamarcelino/Lista_ordenada_resiliaM4.git
